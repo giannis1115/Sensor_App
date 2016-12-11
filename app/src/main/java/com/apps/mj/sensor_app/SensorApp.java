@@ -186,5 +186,6 @@ public class SensorApp extends AppCompatActivity {
                 .show();
     }
 
-
 }
+
+// Commit to test github operations !!!
