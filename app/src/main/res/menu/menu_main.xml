@@ -12,6 +12,14 @@
         <menu>
 
             <item
+                android:id="@+id/settings_id"
+                android:icon="@drawable/settings"
+                android:title="Settings"
+                android:orderInCategory="100">
+
+            </item>
+
+            <item
                 android:id="@+id/accelerometer_id"
                 android:icon="@drawable/accelerometer"
                 android:title="Accelerometer"

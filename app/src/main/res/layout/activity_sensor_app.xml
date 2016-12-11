@@ -23,7 +23,7 @@
             android:textSize="25dp"
             android:textColor="#0000ff"
             android:layout_weight="1"
-            android:text="Accelometer!"
+            android:text="Accelerometer!"
             />
 
         <TextView

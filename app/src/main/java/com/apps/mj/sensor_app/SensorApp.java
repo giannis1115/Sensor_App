@@ -54,7 +54,6 @@ public class SensorApp extends AppCompatActivity {
 
         Button exitButton = (Button) findViewById(R.id.exitbutton);
         exitButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 exit();
@@ -87,6 +86,10 @@ public class SensorApp extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
+            case R.id.settings_id:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                this.startActivity(intent);
+                break;
             case R.id.accelerometer_id:
                 accelerometer();
                 return true;
@@ -99,6 +102,7 @@ public class SensorApp extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return true;
     }
 
     @Override
@@ -187,5 +191,3 @@ public class SensorApp extends AppCompatActivity {
     }
 
 }
-
-// Commit to test github operations !!!
