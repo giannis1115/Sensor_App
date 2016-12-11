@@ -63,7 +63,7 @@ public class MyService extends Service implements SensorEventListener {
         //super.onDestroy();
     }
 
-
+    //FUNCTIONS NEEDED
 
     public void sendMessage(String action,String msg){
         Intent intent = new Intent(ACTION_STRING_ACTIVITY);

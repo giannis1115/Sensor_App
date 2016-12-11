@@ -15,7 +15,7 @@ import android.widget.Toast;
  * Created by john on 24/11/2016.
  */
 
-public class MyBroadcastReciever extends BroadcastReceiver  {
+public class MyBroadcastReceiver extends BroadcastReceiver  {
     //Strings to register to create intent filter for registering the recivers
     private static final String ACTION_STRING_SERVICE = "ToService";
     private static final String ACTION_STRING_ACTIVITY = "ToActivity";

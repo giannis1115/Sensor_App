@@ -15,6 +15,8 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/title1"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -22,9 +24,11 @@
             android:textColor="#0000ff"
             android:layout_weight="1"
             android:text="Accelometer!"
-            android:id="@+id/title1" />
+            />
 
         <TextView
+            android:id="@+id/title2"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -32,7 +36,7 @@
             android:textColor="#ffdd00"
             android:layout_weight="1"
             android:text="Light Sensor!"
-            android:id="@+id/title2" />
+             />
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,23 +44,27 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/textView"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_weight="1"
             android:textSize="15dp"
             android:text="Accelometer!"
-            android:id="@+id/textView" />
+             />
 
 
         <TextView
+            android:id="@+id/textView2"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:textSize="15dp"
             android:layout_weight="1"
             android:text="Light!"
-            android:id="@+id/textView2" />
+             />
 
     </LinearLayout>
 
@@ -65,12 +73,12 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/button"
             android:text="Stop Service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="400dp"
-            android:id="@+id/button"
             android:layout_below="@+id/textView2"
             android:elevation="0dp"
             android:background="@drawable/button_border"
@@ -78,12 +86,12 @@
 
 
         <Button
+            android:id="@+id/exitbutton"
             android:text="Exit App"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="400dp"
-            android:id="@+id/exitbutton"
             android:background="@drawable/exit_button" />
     </LinearLayout>
 
