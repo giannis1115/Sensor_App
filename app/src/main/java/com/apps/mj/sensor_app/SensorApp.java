@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class SensorApp extends AppCompatActivity {
@@ -28,6 +29,13 @@ public class SensorApp extends AppCompatActivity {
     private MyBroadcastReceiver Receiver;
     IntentFilter intentFilter;
 
+    private static TextView accText;
+    private static TextView accTitle;
+    private static TextView ligTitle;
+    private static TextView ligText;
+    public static boolean accFlag = true ;
+    public static boolean ligFlag = true ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +43,8 @@ public class SensorApp extends AppCompatActivity {
         final Button opButton = (Button) findViewById(R.id.button);
         Intent intent = new Intent(this, MyService.class);
         startService(intent);
+
+
 
         opButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,17 +70,32 @@ public class SensorApp extends AppCompatActivity {
             }
         });
 
+        //titles
+        accTitle = (TextView) findViewById(R.id.title1);
+        ligTitle = (TextView) findViewById(R.id.title2);
+
+        //switches
+        //SensorApp.accFlag=true;
+      //  SensorApp.ligFlag=true;
 
         //Start the service on launching the application
-        TextView accText = (TextView) findViewById(R.id.textView);
+        accText = (TextView) findViewById(R.id.textView);
         accText.setText("ACCELERATOR:NO READINGS");
-        TextView ligText = (TextView) findViewById(R.id.textView2);
+        ligText = (TextView) findViewById(R.id.textView2);
         ligText.setText("LIGHT:NO READINGS");
         Receiver = new MyBroadcastReceiver();
         intentFilter = new IntentFilter(ACTION_STRING_ACTIVITY);
         registerReceiver(Receiver, intentFilter);
         startService(new Intent(this, MyService.class));
+
+
+        //Message test
+        Message.setAttribute("ip","182.100.100");
+
+        accTitle.setText(Message.getAttribute("gth"));
+
     }
+
 
 
     //Inflate the menu
@@ -147,29 +172,33 @@ public class SensorApp extends AppCompatActivity {
     }
 
 
-    public void accelerometer() {
-        TextView textView = (TextView) findViewById(R.id.textView);
-        TextView title = (TextView) findViewById(R.id.title1);
-        if (textView.getVisibility()==View.VISIBLE) {
-            textView.setVisibility(View.INVISIBLE);
-            title.setVisibility(View.INVISIBLE);
+    public static void accelerometer() {
+
+        if (accText.getVisibility()==View.VISIBLE) {
+            accFlag=false;
+
+            accText.setVisibility(View.INVISIBLE);
+            accTitle.setVisibility(View.INVISIBLE);
         }
         else {
-            textView.setVisibility(View.VISIBLE);
-            title.setVisibility(View.VISIBLE);
+            accFlag=true;
+
+            accText.setVisibility(View.VISIBLE);
+            accTitle.setVisibility(View.VISIBLE);
         }
     }
 
-    public void light() {
-        TextView textView = (TextView) findViewById(R.id.textView2);
-        TextView title = (TextView) findViewById(R.id.title2);
-        if (textView.getVisibility()==View.VISIBLE) {
-            textView.setVisibility(View.INVISIBLE);
-            title.setVisibility(View.INVISIBLE);
+    public static void light() {
+        if (ligText.getVisibility()==View.VISIBLE) {
+            ligFlag=false;
+            ligText.setVisibility(View.INVISIBLE);
+            ligTitle.setVisibility(View.INVISIBLE);
         }
         else {
-            textView.setVisibility(View.VISIBLE);
-            title.setVisibility(View.VISIBLE);
+            ligFlag=true;
+
+            ligText.setVisibility(View.VISIBLE);
+            ligTitle.setVisibility(View.VISIBLE);
         }
     }
 

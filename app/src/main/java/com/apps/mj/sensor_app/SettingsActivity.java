@@ -9,41 +9,44 @@ import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Switch accSwitch ;
-    Switch ligSwitch ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
-        accSwitch = (Switch) findViewById(R.id.accSwitch_id);
-        ligSwitch = (Switch) findViewById(R.id.ligSwitch_id);
+        final Switch accSwitch = (Switch) findViewById(R.id.accSwitch_id);
+        final Switch ligSwitch = (Switch) findViewById(R.id.ligSwitch_id);
 
-        //set switches to ON
-        accSwitch.setChecked(true);
-        ligSwitch.setChecked(true);
-
-
-
+        accSwitch.setChecked(SensorApp.accFlag);
+        ligSwitch.setChecked(SensorApp.ligFlag);
 
         //attach a listener to check for changes in state
+
         accSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if(isChecked){
-                    SensorApp sensorApp = new SensorApp();
-                    sensorApp.accelerometer();
-                }else{
-                    SensorApp sensorApp = new SensorApp();
-                    sensorApp.accelerometer();                }
+                    SensorApp.accelerometer();
+                    accSwitch.setChecked(SensorApp.accFlag);
             }
+        });
+
+
+        ligSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        SensorApp.light();
+                        ligSwitch.setChecked(SensorApp.ligFlag);
+                }
         });
     }
 
+
+
+
     @Override
     protected void onResume(){
+
         super.onResume();
     }
 
