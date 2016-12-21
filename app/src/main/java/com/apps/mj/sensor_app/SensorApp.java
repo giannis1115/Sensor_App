@@ -92,7 +92,7 @@ public class SensorApp extends AppCompatActivity {
         //Message test
         Message.setAttribute("ip","182.100.100");
 
-        accTitle.setText(Message.getAttribute("gth"));
+        //accTitle.setText(Message.getAttribute("gth"));
 
     }
 
@@ -115,12 +115,6 @@ public class SensorApp extends AppCompatActivity {
                 Intent intent = new Intent(this, SettingsActivity.class);
                 this.startActivity(intent);
                 break;
-            case R.id.accelerometer_id:
-                accelerometer();
-                return true;
-            case R.id.light_id:
-                light();
-                return true;
             case R.id.exit_id:
                 exit();
                 return true;

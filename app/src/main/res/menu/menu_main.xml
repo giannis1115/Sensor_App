@@ -20,21 +20,6 @@
             </item>
 
             <item
-                android:id="@+id/accelerometer_id"
-                android:icon="@drawable/accelerometer"
-                android:title="Accelerometer"
-                android:orderInCategory="100">
-
-            </item>
-
-            <item
-                android:id="@+id/light_id"
-                android:icon="@drawable/light"
-                android:title="Light Sensor"
-                android:orderInCategory="100">
-            </item>
-
-            <item
                 android:id="@+id/exit_id"
                 android:icon="@drawable/exit"
                 android:title="Exit"
